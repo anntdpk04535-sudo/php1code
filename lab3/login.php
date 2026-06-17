@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Đăng nhập - NovaMart</title>
+  <title>Đăng nhập - Mini mart</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css?v=<?= time() ?>" rel="stylesheet">
 </head>
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
   <main class="container py-5">
     <div class="auth-panel p-4 p-md-5 mx-auto" style="max-width:460px">
       <div class="text-center mb-4">
-        <a class="navbar-brand fw-bold text-decoration-none" href="#">NovaMart</a>
+        <a class="navbar-brand fw-bold text-decoration-none" href="#">Mini mart</a>
         <h1 class="h4 fw-bold mt-2 text-secondary">Đăng nhập hệ thống</h1>
       </div>
 

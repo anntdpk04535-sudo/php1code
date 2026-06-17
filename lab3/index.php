@@ -40,7 +40,7 @@ $products = $db->getAll($data_sql, $params);
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NovaMart - Danh sách sản phẩm</title>
+  <title>Mini mart - Danh sách sản phẩm</title>
   <!-- -- Tích hợp Bootstrap 5 và File CSS Custom làm đẹp giao diện -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
@@ -49,7 +49,7 @@ $products = $db->getAll($data_sql, $params);
   <!-- -- Thanh Điều Hướng (Navbar) -->
   <nav class="navbar navbar-expand-lg main-navbar mb-4">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.php">NovaMart</a>
+      <a class="navbar-brand fw-bold" href="index.php">Mini mart</a>
       <div class="ms-auto d-flex align-items-center">
         <!-- --  Hiển thị tên người dùng an toàn bằng htmlspecialchars để chống tấn công XSS -->
         <span class="me-3">Xin chào, <strong><?= htmlspecialchars($user_session['fullname']) ?></strong></span>
