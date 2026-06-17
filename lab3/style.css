@@ -1,0 +1,326 @@
+/* ==========================================================================
+   NovaMart Modern E-commerce Stylesheet
+   ========================================================================== */
+
+   :root {
+    --primary-color: #0071e3;        /* Xanh Apple Modern */
+    --primary-hover: #0077ed;
+    --success-color: #34c759;        /* Xanh lá mềm mại */
+    --danger-color: #ff3b30;         /* Đỏ mềm mại */
+    --warning-color: #ff9500;        /* Cam pastel */
+    --bg-light: #f5f5f7;             /* Nền xám trắng tinh tế kiểu Apple */
+    --text-main: #1d1d1f;            /* Chữ gần đen */
+    --text-muted: #86868b;           /* Chữ nhạt */
+    --card-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    --card-shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.09);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   1. AUTH LAYOUT (Đăng nhập / Đăng ký)
+   ========================================================================== */
+.auth-body {
+    background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-panel {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-panel:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   2. NAVBAR & NAVIGATION
+   ========================================================================== */
+.main-navbar {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #0071e3 0%, #34c759 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Search Bar hiện đại */
+.search-form .form-control {
+    border-radius: 20px 0 0 20px;
+    border: 1px solid #d2d2d7;
+    padding-left: 20px;
+    background-color: #f5f5f7;
+    transition: all 0.2s ease;
+}
+
+.search-form .form-control:focus {
+    background-color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+.search-form .btn {
+    border-radius: 0 20px 20px 0;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/* ==========================================================================
+   3. PRODUCT GRID & CARDS (Giao diện thẻ sản phẩm)
+   ========================================================================== */
+.product-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+/* Khung bọc ảnh để zoom không tràn viền */
+.product-img-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Tạo tỉ lệ ảnh vuông 1:1 chuẩn e-commerce */
+    overflow: hidden;
+    background-color: #fbfbfd;
+}
+
+.product-card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-card-img {
+    transform: scale(1.06);
+}
+
+.product-card .card-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.4;
+    height: 2.8em; /* Giới hạn tối đa 2 dòng chữ tránh lệch card */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-bottom: 8px;
+}
+
+.product-category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #e31c25; /* Đỏ giá tiền nổi bật */
+    margin-bottom: 4px;
+}
+
+.product-stock {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   4. BUTTONS & UI ELEMENTS
+   ========================================================================== */
+.btn {
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    padding: 8px 16px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+/* Form controls */
+.form-control, .form-select {
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    border: 1px solid #d2d2d7;
+    color: var(--text-main);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15);
+}
+
+/* ==========================================================================
+   5. MODERN PASTEL BADGES (Hệ thống nhãn kiểu mới)
+   ========================================================================== */
+.badge {
+    padding: 6px 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    font-size: 0.8rem;
+}
+
+/* Trạng thái hoạt động */
+.bg-success {
+    background-color: rgba(52, 199, 89, 0.15) !important;
+    color: #248a3d !important;
+}
+
+/* Trạng thái bị khóa */
+.bg-danger {
+    background-color: rgba(255, 59, 48, 0.15) !important;
+    color: #b3241e !important;
+}
+
+/* Quyền Admin */
+.badge-admin {
+    background-color: rgba(255, 149, 0, 0.15) !important;
+    color: #b36b00 !important;
+}
+
+/* Quyền Người dùng thường */
+.badge-user {
+    background-color: rgba(0, 113, 227, 0.15) !important;
+    color: #0051a3 !important;
+}
+
+/* ==========================================================================
+   6. TABLES & MANAGEMENT PANELS
+   ========================================================================== */
+.table-container {
+    background: #ffffff;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    background-color: #f5f5f7;
+    color: #6e6e73;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding: 16px;
+    border-bottom: 1px solid #e5e5ea;
+}
+
+.table td {
+    padding: 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f5f5f7;
+}
+
+/* ==========================================================================
+   7. PAGINATION (Thanh phân trang)
+   ========================================================================== */
+.pagination .page-link {
+    border: none;
+    color: var(--text-main);
+    padding: 10px 18px;
+    margin: 0 4px;
+    border-radius: 8px;
+    font-weight: 600;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    transition: all 0.2s ease;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 113, 227, 0.25);
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: transparent;
+    color: var(--text-muted);
+}
+
+.pagination .page-link:hover:not(.active) {
+    background-color: #e8e8ed;
+    color: var(--primary-color);
+}
+/* ==========================================================================
+   VÁ LỖI TƯƠNG TÁC CLICK (POINTER EVENTS FIX)
+   ========================================================================== */
+
+/* Ép các nút chức năng luôn nằm trên cùng bề mặt để có thể click được */
+.btn, .page-link, .form-control, .navbar-brand {
+    position: relative !important;
+    z-index: 5 !important;
+    pointer-events: auto !important; /* Kích hoạt lại quyền nhận chuột */
+    cursor: pointer !important;
+}
+
+/* Đảm bảo phần body của card không che khuất các nút Sửa/Xóa */
+.product-card .card-body {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Hạ bớt z-index của các lớp hiệu ứng nền nếu có */
+.product-img-wrapper {
+    z-index: 1 !important;
+}
