@@ -12,7 +12,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 $vnp_TmnCode = "OZ4ZPZF0"; // Lấy từ trang Sandbox
 $vnp_HashSecret = "2AJQWG16X0U2K8QGBHKEXN6ZASLL4P8E";
 $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-$vnp_Returnurl = "http://localhost/baitapnhom/vnpay_return.php"; // URL quay về sau thanh toán
+$vnp_Returnurl = "http://localhost/lab_asm/lab5-8/vnpay_return.php"; // URL quay về sau thanh toán
 
 $momo_PartnerCode = "MOMOXDEO20251204_TEST";
 $momo_AccessKey = "FCdb8d54bqstOuX7";
